@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Monitor | GateSync</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">✈ GateSync Control</div>
+        <div class="nav-links">
+            <a href="index.html">Overview</a>
+            <a href="assign.html">1. Gate Allocation</a>
+            <a href="schedule.html" class="active">2. Live Monitor</a>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <!-- Top Live Counters -->
+        <div class="stats-row">
+            <div class="stat-box">Total Gates: <span id="total-gates">4</span></div>
+            <div class="stat-box free">Available Gates: <span id="free-gates">2</span></div>
+            <div class="stat-box busy">Occupied Gates: <span id="busy-gates">2</span></div>
+        </div>
+
+        <!-- Gate Status Table -->
+        <section class="box">
+            <h2>Live Gate Status</h2>
+            <table>
+                <tr>
+                    <th>Gate</th>
+                    <th>Allowed Aircraft</th>
+                    <th>Current Status</th>
+                </tr>
+                <tr>
+                    <td><strong>A1</strong></td>
+                    <td>Small / Medium</td>
+                    <td id="status-A1" class="available">Available</td>
+                </tr>
+                <tr>
+                    <td><strong>A2</strong></td>
+                    <td>Small / Medium</td>
+                    <td id="status-A2" class="available">Available</td>
+                </tr>
+                <tr>
+                    <td><strong>B1</strong></td>
+                    <td>Medium / Large</td>
+                    <td id="status-B1" class="available">Available</td>
+                </tr>
+                <tr>
+                    <td><strong>B2</strong></td>
+                    <td>Large Only</td>
+                    <td id="status-B2" class="available">Available</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Master Flight Schedule Table -->
+        <section class="box">
+            <h2>Master Flight Schedule</h2>
+            <div class="table-scroll">
+                <table id="flightTable">
+                    <thead>
+                        <tr>
+                            <th>Flight</th>
+                            <th>Airline</th>
+                            <th>Aircraft</th>
+                            <th>Type</th>
+                            <th>Time</th>
+                            <th>Gate</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="flightBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Created by <strong>Team WebForge</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

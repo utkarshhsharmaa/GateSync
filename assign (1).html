@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Allocation | GateSync</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">✈ GateSync Control</div>
+        <div class="nav-links">
+            <a href="index.html">Overview</a>
+            <a href="assign.html" class="active">1. Gate Allocation</a>
+            <a href="schedule.html">2. Live Monitor</a>
+        </div>
+    </nav>
+
+    <main class="page-container two-col">
+        <!-- Left Card: Assignment Form -->
+        <section class="box">
+            <h2>Assign Flight to Gate</h2>
+            <div class="form-grid">
+                <input type="text" id="flight" placeholder="Flight No. (e.g. AI-620)">
+                <input type="text" id="airline" placeholder="Airline (e.g. Air India)">
+
+                <select id="aircraft">
+                    <option value="Small">Small (ATR-72)</option>
+                    <option value="Medium">Medium (A320 / B737)</option>
+                    <option value="Large">Large (B777 / A380)</option>
+                </select>
+
+                <select id="flightType">
+                    <option value="Arrival">Arrival</option>
+                    <option value="Departure">Departure</option>
+                </select>
+
+                <div class="time-group">
+                    <label>Start:</label>
+                    <input type="time" id="start">
+                </div>
+
+                <div class="time-group">
+                    <label>End:</label>
+                    <input type="time" id="end">
+                </div>
+
+                <select id="gate">
+                    <option value="A1">Gate A1 (Small / Medium)</option>
+                    <option value="A2">Gate A2 (Small / Medium)</option>
+                    <option value="B1">Gate B1 (Medium / Large)</option>
+                    <option value="B2">Gate B2 (Large Only)</option>
+                </select>
+
+                <button onclick="assign()">Assign Gate</button>
+            </div>
+            <div id="result" class="alert-box">Fill flight details and click Assign Gate.</div>
+        </section>
+
+        <!-- Right Card: Quick Terminal Rules -->
+        <section class="box">
+            <h2>Terminal Gate Rules</h2>
+            <ul class="rules-list">
+                <li><strong>Gate A1 &amp; A2:</strong> Allowed for <em>Small</em> and <em>Medium</em> aircraft only.</li>
+                <li><strong>Gate B1:</strong> Allowed for <em>Medium</em> and <em>Large</em> aircraft.</li>
+                <li><strong>Gate B2:</strong> Reserved strictly for <em>Large</em> wide-body aircraft.</li>
+                <li><strong>Time Check:</strong> Overlapping schedules on the same gate are blocked automatically.</li>
+            </ul>
+            <a href="schedule.html" class="secondary-btn">View Live Monitor →</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Created by <strong>Team WebForge</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
